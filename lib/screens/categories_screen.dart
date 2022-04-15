@@ -3,6 +3,7 @@ import 'package:news/models/screens.dart';
 import 'package:news/widgets/main_drawer.dart';
 
 // ignore: use_key_in_widget_constructors
+// testing
 class CategoriesScreen extends StatelessWidget {
   static const routeName = '/categories';
 
