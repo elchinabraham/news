@@ -9,6 +9,7 @@ class NewsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
+        color: const Color.fromRGBO(32, 32, 32, 1),
         clipBehavior: Clip.antiAlias,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
@@ -59,7 +60,7 @@ class NewsItem extends StatelessWidget {
               child: const Text(
                 'Jurnalistlər arasında Zəfər Kuboku keçiriləcək',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -75,33 +76,51 @@ class NewsItem extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.remove_red_eye,
+                        color: Colors.white,
                       ),
                       SizedBox(
                         width: 5,
                       ),
-                      Text('36'),
+                      Text(
+                        '36',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
                   Row(
                     children: <Widget>[
                       Icon(
                         Icons.date_range,
+                        color: Colors.white,
                       ),
                       SizedBox(
                         width: 5,
                       ),
-                      Text('2022.04.13'),
+                      Text(
+                        '2022.04.13',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
                   Row(
                     children: <Widget>[
                       Icon(
                         Icons.source,
+                        color: Colors.white,
                       ),
                       SizedBox(
                         width: 5,
                       ),
-                      Text('oxu.az'),
+                      Text(
+                        'oxu.az',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
                 ],

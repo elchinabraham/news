@@ -13,15 +13,18 @@ class MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('test');
     return Drawer(
+      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
       child: Column(
         children: <Widget>[
           Container(
-            height: 120,
+            height: 150,
             width: double.infinity,
             padding: const EdgeInsets.fromLTRB(20, 40, 20, 10),
             alignment: Alignment.centerLeft,
-            color: Colors.red[500],
+            color:
+                1 == 1 ? const Color.fromRGBO(32, 32, 32, 1) : Colors.red[500],
             child: const Text(
               'News Application',
               style: TextStyle(
@@ -33,8 +36,18 @@ class MainDrawer extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Main Page'),
+            leading: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 26,
+            ),
+            title: const Text(
+              'Main Page',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
             onTap: () {
               // Open main page
               Navigator.of(context).pop();
@@ -45,8 +58,18 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.list_outlined),
-            title: const Text('Categories'),
+            leading: const Icon(
+              Icons.list_outlined,
+              color: Colors.white,
+              size: 26,
+            ),
+            title: const Text(
+              'Categories',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
             onTap: () {
               // open categories screen
               Navigator.of(context).pop();
@@ -58,8 +81,18 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.favorite),
-            title: const Text('Favorites'),
+            leading: const Icon(
+              Icons.favorite,
+              color: Colors.white,
+              size: 26,
+            ),
+            title: const Text(
+              'Favorites',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
             onTap: () {
               // open main page with only favorite items
               Navigator.of(context).pop();
@@ -71,8 +104,18 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.info),
-            title: const Text('About'),
+            leading: const Icon(
+              Icons.info,
+              color: Colors.white,
+              size: 26,
+            ),
+            title: const Text(
+              'About',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
             onTap: () {
               // open about screen
               Navigator.of(context).pop();
@@ -84,8 +127,18 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.mail),
-            title: const Text('Contact'),
+            leading: const Icon(
+              Icons.mail,
+              color: Colors.white,
+              size: 26,
+            ),
+            title: const Text(
+              'Contact',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
             onTap: () {
               // open contact screen
               Navigator.of(context).pop();

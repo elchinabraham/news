@@ -67,7 +67,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
         title: isSearching
             ? TextField(
                 focusNode: searchFocusNode,
@@ -111,7 +113,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                   }),
         ],
       ),
-      drawer: MainDrawer(Screens.Favorites),
+      drawer: MainDrawer(Screens.Home),
       body: items.isNotEmpty
           ? RefreshIndicator(
               color: Colors.black87,

@@ -9,12 +9,17 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
         title: const Text('About'),
       ),
       drawer: MainDrawer(Screens.About),
       body: Container(
-        child: const Text('About....'),
+        child: const Text(
+          'About....',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }

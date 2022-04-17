@@ -10,12 +10,17 @@ class ContactScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
         title: const Text('Categories'),
       ),
       drawer: MainDrawer(Screens.Contact),
       body: Container(
-        child: const Text('Contact....'),
+        child: const Text(
+          'Contact....',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }

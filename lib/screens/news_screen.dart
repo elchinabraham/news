@@ -5,7 +5,9 @@ class NewsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
         title: Text('data'),
         actions: <Widget>[
           PopupMenuButton<int>(
@@ -44,13 +46,13 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                 """,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
               subtitle: Text(
                 """Bu gün bir pakistanlı satıcı ilə söhbətim zamanı bu sualı ünvanladım. Pakistanlılar bizi niyə sevir? Aldığım cavab mənə çoxdan oxuduğum bir məqaləni xatırlatdı. Pakistan xalqı ilə könül bağlarımızın Hacı Zeynalabdin Tağıyevlə bağlı olduğunu bilirdim amma ilk könül bağlarının yaranma tarixini açığı unutmuşdum. Əslində bu sualın bir çox cavabı var.""",
-                style: TextStyle(
-                    color: Colors.black.withOpacity(0.8),
-                    fontWeight: FontWeight.bold),
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -88,7 +90,9 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
       
       Son olaraq bir məlumatı da qeyd etmək lazımdır ki, Pakistan İslam Respublikası Azərbaycan torpaqlarını işğal etdiyi üçün Ermənistanı bir dövlət kimi tanımır və müharibə zamanı ehtiyac yaranarsa Pakistan ordusunun köməyə gəlməyə hazır olduğunu bildirirlər..
                 """,
-                style: TextStyle(color: Colors.black.withOpacity(0.8)),
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
             Padding(
@@ -100,12 +104,16 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                     children: <Widget>[
                       Icon(
                         Icons.calendar_month,
+                        color: Colors.white,
                       ),
                       const SizedBox(
                         width: 5,
                       ),
                       Text(
                         'Datetime:',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(
                         width: 5,
@@ -116,7 +124,7 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                           '2022/04/15 12:30',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           textAlign: TextAlign.right,
                         ),
@@ -129,12 +137,16 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                     children: <Widget>[
                       Icon(
                         Icons.source,
+                        color: Colors.white,
                       ),
                       const SizedBox(
                         width: 5,
                       ),
                       Text(
                         'Author:',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(
                         width: 5,
@@ -145,7 +157,7 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                           'Elchin Ibrahimli',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           textAlign: TextAlign.right,
                         ),
