@@ -11,16 +11,27 @@ class NewsScreen extends StatelessWidget {
         title: Text('data'),
         actions: <Widget>[
           PopupMenuButton<int>(
+            color: Color.fromRGBO(32, 32, 32, 1),
             onSelected: (x) {},
             itemBuilder: (context) => [
               PopupMenuItem<int>(
                 value: 0,
-                child: const Text('Copy Text'),
+                child: const Text(
+                  'Copy Text',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
                 onTap: () {},
               ),
               PopupMenuItem<int>(
                 value: 1,
-                child: const Text('Add Favorite'),
+                child: const Text(
+                  'Add Favorite',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
                 onTap: () {},
               ),
             ],
@@ -32,7 +43,7 @@ class NewsScreen extends StatelessWidget {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: 250,
+              height: 270,
               child: Image.network(
                 'https://cdn.oxu.az/uploads/W1siZiIsIjIwMjIvMDQvMTMvMTIvMjUvMTMvNWYyNjExZGUtOTRlMS00MDQyLWI0YzYtZGVjYmFiYTJmMTQzL1doYXRzQXBwIEltYWdlIDIwMjItMDQtMTMgYXQgMTEuMDguMDIgKDEpLmpwZWciXSxbInAiLCJlbmNvZGUiLCJqcGciLCItcXVhbGl0eSA4MCJdLFsicCIsInRodW1iIiwiNjIweDQxMyMiXV0?sha=4b201032df2d17ea',
                 fit: BoxFit.fitWidth,
@@ -95,7 +106,8 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                 ),
               ),
             ),
-            Padding(
+            Container(
+              height: 150,
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Column(
                 children: <Widget>[
@@ -131,7 +143,7 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[

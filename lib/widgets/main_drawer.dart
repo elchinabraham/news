@@ -15,7 +15,7 @@ class MainDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     print('test');
     return Drawer(
-      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
+      backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
       child: Column(
         children: <Widget>[
           Container(
@@ -24,7 +24,7 @@ class MainDrawer extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(20, 40, 20, 10),
             alignment: Alignment.centerLeft,
             color:
-                1 == 1 ? const Color.fromRGBO(32, 32, 32, 1) : Colors.red[500],
+                1 == 1 ? const Color.fromRGBO(24, 24, 24, 1) : Colors.red[500],
             child: const Text(
               'News Application',
               style: TextStyle(
