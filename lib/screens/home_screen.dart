@@ -151,8 +151,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           : Container(
-              child: const Center(
-                child: CircularProgressIndicator(),
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
               ),
             ),
     );
