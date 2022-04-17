@@ -64,102 +64,97 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: isSearching
-              ? TextField(
-                  focusNode: searchFocusNode,
-                  cursorColor: Colors.white,
-                  style: const TextStyle(
+    return Scaffold(
+      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+        title: isSearching
+            ? TextField(
+                focusNode: searchFocusNode,
+                cursorColor: Colors.white,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+                decoration: const InputDecoration(
+                  hintText: "Searching...",
+                  icon: Icon(
+                    Icons.search,
                     color: Colors.white,
-                    fontSize: 20,
                   ),
-                  decoration: const InputDecoration(
-                    hintText: "Searching...",
-                    icon: Icon(
-                      Icons.search,
-                      color: Colors.white,
-                    ),
-                    border: InputBorder.none,
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 3, horizontal: 2),
-                    hintStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
+                  border: InputBorder.none,
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 3, horizontal: 2),
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
                   ),
-                  onSubmitted: (e) {})
-              : const Text('News'),
-          actions: <Widget>[
-            isSearching
-                ? IconButton(
-                    icon: const Icon(Icons.clear),
-                    onPressed: () {
-                      setState(() {
-                        isSearching = !isSearching;
-                      });
-                    })
-                : IconButton(
-                    icon: const Icon(Icons.search),
-                    onPressed: () {
-                      setState(() {
-                        isSearching = !isSearching;
-                        searchFocusNode.requestFocus();
-                      });
-                    }),
-          ],
-        ),
-        drawer: MainDrawer(Screens.Home),
-        body: items.isNotEmpty
-            ? RefreshIndicator(
-                color: Colors.black87,
-                onRefresh: () {
-                  items = [];
-                  return pagenation();
-                },
-                child: Stack(
-                  children: [
-                    ListView.builder(
-                      controller: _scrollController,
-                      itemCount: items.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: NewsItem(
-                            title: items[index],
-                          ),
-                        );
-                      },
-                    ),
-                    if (isLoading) ...[
-                      Positioned(
-                        left: 0,
-                        bottom: 0,
-                        child: Container(
-                          height: 80,
-                          width: 400,
-                          child: const Center(
-                            child: CircularProgressIndicator(
-                              color: Colors.black87,
-                            ),
+                ),
+                onSubmitted: (e) {})
+            : const Text('News'),
+        actions: <Widget>[
+          isSearching
+              ? IconButton(
+                  icon: const Icon(Icons.clear),
+                  onPressed: () {
+                    setState(() {
+                      isSearching = !isSearching;
+                    });
+                  })
+              : IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    setState(() {
+                      isSearching = !isSearching;
+                      searchFocusNode.requestFocus();
+                    });
+                  }),
+        ],
+      ),
+      drawer: MainDrawer(Screens.Home),
+      body: items.isNotEmpty
+          ? RefreshIndicator(
+              color: Colors.black87,
+              onRefresh: () {
+                items = [];
+                return pagenation();
+              },
+              child: Stack(
+                children: [
+                  ListView.builder(
+                    controller: _scrollController,
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        title: NewsItem(
+                          title: items[index],
+                        ),
+                      );
+                    },
+                  ),
+                  if (isLoading) ...[
+                    Positioned(
+                      left: 0,
+                      bottom: 0,
+                      child: Container(
+                        height: 80,
+                        width: 400,
+                        child: const Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.black87,
                           ),
                         ),
-                      )
-                    ],
+                      ),
+                    )
                   ],
-                ),
-              )
-            : Container(
-                child: const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                ],
               ),
-      ),
+            )
+          : Container(
+              child: const Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
     );
   }
 }
