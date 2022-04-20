@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:news/models/screens.dart';
@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isSearching = false;
   final FocusNode searchFocusNode = FocusNode();
 
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   List<String> items = []; // List<String>.generate(10, (i) => 'Item $i');
   bool isLoading = false;
   bool isAllLoaded = false;
@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: 400,
                         child: const Center(
                           child: CircularProgressIndicator(
-                            color: Colors.black87,
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -151,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           : Container(
-              child: Center(
+              child: const Center(
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                 ),
