@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 
@@ -113,7 +113,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                   }),
         ],
       ),
-      drawer: MainDrawer(Screens.Home),
+      drawer: MainDrawer(Screens.Favorites),
       body: items.isNotEmpty
           ? RefreshIndicator(
               color: Colors.black87,
@@ -143,7 +143,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                         width: 400,
                         child: const Center(
                           child: CircularProgressIndicator(
-                            color: Colors.black87,
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -154,7 +154,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
             )
           : Container(
               child: const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
               ),
             ),
     );

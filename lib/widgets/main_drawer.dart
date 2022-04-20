@@ -13,7 +13,6 @@ class MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('test');
     return Drawer(
       backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
       child: Column(
@@ -45,7 +44,7 @@ class MainDrawer extends StatelessWidget {
               'Main Page',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 15,
               ),
             ),
             onTap: () {
@@ -67,7 +66,7 @@ class MainDrawer extends StatelessWidget {
               'Categories',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 15,
               ),
             ),
             onTap: () {
@@ -90,7 +89,7 @@ class MainDrawer extends StatelessWidget {
               'Favorites',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 15,
               ),
             ),
             onTap: () {
@@ -113,7 +112,7 @@ class MainDrawer extends StatelessWidget {
               'About',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 15,
               ),
             ),
             onTap: () {
@@ -136,7 +135,7 @@ class MainDrawer extends StatelessWidget {
               'Contact',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 15,
               ),
             ),
             onTap: () {
