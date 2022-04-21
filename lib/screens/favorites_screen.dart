@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/screens.dart';
+import '../models/utils.dart';
 import '../widgets/main_drawer.dart';
 import '../widgets/news_item.dart';
 
@@ -67,9 +68,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
+      backgroundColor: Utils.mainColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+        backgroundColor: Utils.appBarColor,
         title: isSearching
             ? TextField(
                 focusNode: searchFocusNode,
@@ -141,9 +142,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       child: Container(
                         height: 80,
                         width: 400,
-                        child: const Center(
+                        child: Center(
                           child: CircularProgressIndicator(
-                            color: Colors.white,
+                            color: Utils.textColor,
                           ),
                         ),
                       ),
@@ -153,9 +154,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               ),
             )
           : Container(
-              child: const Center(
+              child: Center(
                 child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  valueColor: AlwaysStoppedAnimation<Color>(Utils.textColor),
                 ),
               ),
             ),

@@ -6,6 +6,7 @@ import 'package:news/screens/contact_screen.dart';
 import 'package:news/screens/favorites_screen.dart';
 import 'package:news/screens/home_screen.dart';
 import 'package:news/screens/news_screen.dart';
+import 'package:news/screens/settings_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         FavoritesScreen.routeName: (ctx) => FavoritesScreen(),
         AboutScreen.routeName: (ctx) => AboutScreen(),
         ContactScreen.routeName: (ctx) => ContactScreen(),
+        SettingsScreen.routeName: (ctx) => SettingsScreen(),
       },
       onGenerateRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => NewsScreen());

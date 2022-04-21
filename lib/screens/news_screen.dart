@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:news/models/utils.dart';
 
 class NewsScreen extends StatelessWidget {
   static const routeName = '/news-screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
+      backgroundColor: Utils.mainColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+        backgroundColor: Utils.appBarColor,
         title: Text('data'),
         actions: <Widget>[
           PopupMenuButton<int>(
-            color: Color.fromRGBO(32, 32, 32, 1),
+            color: Utils.mainColor,
             onSelected: (x) {},
             itemBuilder: (context) => [
               PopupMenuItem<int>(
                 value: 0,
-                child: const Text(
+                child: Text(
                   'Copy Text',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Utils.textColor,
                   ),
                 ),
                 onTap: () {},
               ),
               PopupMenuItem<int>(
                 value: 1,
-                child: const Text(
+                child: Text(
                   'Add Favorite',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Utils.textColor,
                   ),
                 ),
                 onTap: () {},
@@ -50,20 +51,20 @@ class NewsScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: const Text(
+              title: Text(
                 """
 
 Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                 """,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Utils.textColor,
                 ),
               ),
               subtitle: Text(
                 """Bu gün bir pakistanlı satıcı ilə söhbətim zamanı bu sualı ünvanladım. Pakistanlılar bizi niyə sevir? Aldığım cavab mənə çoxdan oxuduğum bir məqaləni xatırlatdı. Pakistan xalqı ilə könül bağlarımızın Hacı Zeynalabdin Tağıyevlə bağlı olduğunu bilirdim amma ilk könül bağlarının yaranma tarixini açığı unutmuşdum. Əslində bu sualın bir çox cavabı var.""",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Utils.textColor, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -102,12 +103,12 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
       Son olaraq bir məlumatı da qeyd etmək lazımdır ki, Pakistan İslam Respublikası Azərbaycan torpaqlarını işğal etdiyi üçün Ermənistanı bir dövlət kimi tanımır və müharibə zamanı ehtiyac yaranarsa Pakistan ordusunun köməyə gəlməyə hazır olduğunu bildirirlər..
                 """,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Utils.textColor,
                 ),
               ),
             ),
             Container(
-              height: 150,
+              height: 100,
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Column(
                 children: <Widget>[
@@ -116,16 +117,14 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                     children: <Widget>[
                       Icon(
                         Icons.calendar_month,
-                        color: Colors.white,
+                        color: Utils.iconColor,
                       ),
                       const SizedBox(
                         width: 5,
                       ),
                       Text(
                         'Datetime:',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(color: Utils.textColor),
                       ),
                       const SizedBox(
                         width: 5,
@@ -135,9 +134,8 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                         child: Text(
                           '2022/04/15 12:30',
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                              fontWeight: FontWeight.bold,
+                              color: Utils.textColor),
                           textAlign: TextAlign.right,
                         ),
                       ),
@@ -149,7 +147,7 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                     children: <Widget>[
                       Icon(
                         Icons.source,
-                        color: Colors.white,
+                        color: Utils.iconColor,
                       ),
                       const SizedBox(
                         width: 5,
@@ -157,7 +155,7 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                       Text(
                         'Author:',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Utils.textColor,
                         ),
                       ),
                       const SizedBox(
@@ -169,7 +167,7 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                           'Elchin Ibrahimli',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Utils.textColor,
                           ),
                           textAlign: TextAlign.right,
                         ),

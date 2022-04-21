@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:news/models/utils.dart';
 
 import '../models/screens.dart';
 import '../widgets/main_drawer.dart';
@@ -10,10 +11,10 @@ class ContactScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+      backgroundColor: Utils.mainColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
-        title: const Text('Categories'),
+        backgroundColor: Utils.appBarColor,
+        title: const Text('Contact'),
       ),
       drawer: MainDrawer(Screens.Contact),
       body: SingleChildScrollView(
@@ -23,28 +24,28 @@ class ContactScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
-                cursorColor: Colors.white,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
+                cursorColor: Utils.textColor,
+                style: TextStyle(
+                  color: Utils.textColor,
+                  fontSize: 16,
                 ),
                 decoration: InputDecoration(
                   labelText: "Your Name",
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
+                  labelStyle: TextStyle(
+                    color: Utils.textColor,
                   ),
-                  fillColor: Colors.white,
+                  fillColor: Utils.textColor,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
                     borderSide: const BorderSide(color: Colors.grey),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
-                    borderSide: const BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: Utils.textColor),
                   ),
-                  suffixIcon: const Icon(
+                  suffixIcon: Icon(
                     Icons.man,
-                    color: Colors.white,
+                    color: Utils.iconColor,
                   ),
                 ),
               ),
@@ -53,28 +54,28 @@ class ContactScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
-                cursorColor: Colors.white,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
+                cursorColor: Utils.textColor,
+                style: TextStyle(
+                  color: Utils.textColor,
+                  fontSize: 16,
                 ),
                 decoration: InputDecoration(
                   labelText: "Your Email",
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
+                  labelStyle: TextStyle(
+                    color: Utils.textColor,
                   ),
-                  fillColor: Colors.white,
+                  fillColor: Utils.textColor,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
                     borderSide: const BorderSide(color: Colors.grey),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
-                    borderSide: const BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: Utils.textColor),
                   ),
-                  suffixIcon: const Icon(
+                  suffixIcon: Icon(
                     Icons.email,
-                    color: Colors.white,
+                    color: Utils.iconColor,
                   ),
                 ),
               ),
@@ -84,28 +85,28 @@ class ContactScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                 maxLines: 6, // <--- maxLines
-                cursorColor: Colors.white,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
+                cursorColor: Utils.textColor,
+                style: TextStyle(
+                  color: Utils.textColor,
+                  fontSize: 16,
                 ),
                 decoration: InputDecoration(
                   labelText: "Your Message",
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
+                  labelStyle: TextStyle(
+                    color: Utils.textColor,
                   ),
-                  fillColor: Colors.white,
+                  fillColor: Utils.textColor,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
                     borderSide: const BorderSide(color: Colors.grey),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
-                    borderSide: const BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: Utils.textColor),
                   ),
-                  suffix: const Icon(
+                  suffix: Icon(
                     Icons.message,
-                    color: Colors.white,
+                    color: Utils.iconColor,
                   ),
                 ),
               ),
@@ -118,10 +119,15 @@ class ContactScreen extends StatelessWidget {
                 height: 45,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.grey,
+                    primary: Utils.buttonColor,
                   ),
                   onPressed: () {},
-                  child: const Text('Send Message'),
+                  child: const Text(
+                    'Send Message',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
               ),
             ),

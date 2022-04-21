@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/models/utils.dart';
 
 class CategoryItem extends StatelessWidget {
   String title;
@@ -22,7 +23,7 @@ class CategoryItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(6.0),
         ),
-        color: const Color.fromRGBO(22, 22, 22, 1),
+        color: Utils.mainColor,
         elevation: 10,
         child: Container(
           width: 150,
@@ -33,18 +34,18 @@ class CategoryItem extends StatelessWidget {
             children: <Widget>[
               Image.network(
                 imageUrl,
-                width: 70,
-                height: 70,
+                width: 50,
+                height: 50,
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Utils.textColor,
                 ),
               ),
             ],

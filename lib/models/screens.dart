@@ -7,4 +7,5 @@ enum Screens {
   Favorites,
   About,
   Contact,
+  Settings,
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news/models/category.dart';
 import 'package:news/models/screens.dart';
+import 'package:news/models/utils.dart';
 import 'package:news/repositories/category_repository.dart';
 import 'package:news/widgets/category_item.dart';
 import 'package:news/widgets/main_drawer.dart';
@@ -14,9 +15,9 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Category> categories = CategoryRepository.getCategories();
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+      backgroundColor: Utils.mainColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
+        backgroundColor: Utils.appBarColor,
         title: const Text('Categories'),
       ),
       drawer: MainDrawer(Screens.Categories),

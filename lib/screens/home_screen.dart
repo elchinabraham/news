@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/models/screens.dart';
+import 'package:news/models/utils.dart';
 import 'package:news/widgets/news_item.dart';
 import 'package:news/widgets/main_drawer.dart';
 
@@ -65,9 +66,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
+      backgroundColor: Utils.mainColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+        backgroundColor: Utils.appBarColor,
         title: isSearching
             ? TextField(
                 focusNode: searchFocusNode,
@@ -139,9 +140,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Container(
                         height: 80,
                         width: 400,
-                        child: const Center(
+                        child: Center(
                           child: CircularProgressIndicator(
-                            color: Colors.white,
+                            color: Utils.textColor,
                           ),
                         ),
                       ),
@@ -151,9 +152,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           : Container(
-              child: const Center(
+              child: Center(
                 child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  valueColor: AlwaysStoppedAnimation<Color>(Utils.textColor),
                 ),
               ),
             ),

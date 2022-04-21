@@ -2,10 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/models/screens.dart';
+import 'package:news/models/utils.dart';
 import 'package:news/screens/about_screen.dart';
 import 'package:news/screens/categories_screen.dart';
 import 'package:news/screens/contact_screen.dart';
 import 'package:news/screens/favorites_screen.dart';
+import 'package:news/screens/settings_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   final Screens _screens;
@@ -14,7 +16,7 @@ class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+      backgroundColor: Utils.mainColor,
       child: Column(
         children: <Widget>[
           Container(
@@ -22,8 +24,7 @@ class MainDrawer extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.fromLTRB(20, 40, 20, 10),
             alignment: Alignment.centerLeft,
-            color:
-                1 == 1 ? const Color.fromRGBO(24, 24, 24, 1) : Colors.red[500],
+            color: Utils.appBarColor,
             child: const Text(
               'News Application',
               style: TextStyle(
@@ -35,15 +36,15 @@ class MainDrawer extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.home,
-              color: Colors.white,
+              color: Utils.iconColor,
               size: 26,
             ),
-            title: const Text(
+            title: Text(
               'Main Page',
               style: TextStyle(
-                color: Colors.white,
+                color: Utils.textColor,
                 fontSize: 15,
               ),
             ),
@@ -57,15 +58,15 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.list_outlined,
-              color: Colors.white,
+              color: Utils.iconColor,
               size: 26,
             ),
-            title: const Text(
+            title: Text(
               'Categories',
               style: TextStyle(
-                color: Colors.white,
+                color: Utils.textColor,
                 fontSize: 15,
               ),
             ),
@@ -80,15 +81,15 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.favorite,
-              color: Colors.white,
+              color: Utils.iconColor,
               size: 26,
             ),
-            title: const Text(
+            title: Text(
               'Favorites',
               style: TextStyle(
-                color: Colors.white,
+                color: Utils.textColor,
                 fontSize: 15,
               ),
             ),
@@ -103,15 +104,15 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.info,
-              color: Colors.white,
+              color: Utils.iconColor,
               size: 26,
             ),
-            title: const Text(
+            title: Text(
               'About',
               style: TextStyle(
-                color: Colors.white,
+                color: Utils.textColor,
                 fontSize: 15,
               ),
             ),
@@ -126,15 +127,15 @@ class MainDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.mail,
-              color: Colors.white,
+              color: Utils.iconColor,
               size: 26,
             ),
-            title: const Text(
+            title: Text(
               'Contact',
               style: TextStyle(
-                color: Colors.white,
+                color: Utils.textColor,
                 fontSize: 15,
               ),
             ),
@@ -144,6 +145,29 @@ class MainDrawer extends StatelessWidget {
               if (_screens != Screens.Contact) {
                 Navigator.of(context, rootNavigator: true)
                     .pushReplacementNamed(ContactScreen.routeName);
+              }
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: Icon(
+              Icons.settings,
+              color: Utils.iconColor,
+              size: 26,
+            ),
+            title: Text(
+              'Settings',
+              style: TextStyle(
+                color: Utils.textColor,
+                fontSize: 15,
+              ),
+            ),
+            onTap: () {
+              // open contact screen
+              Navigator.of(context).pop();
+              if (_screens != Screens.Settings) {
+                Navigator.of(context, rootNavigator: true)
+                    .pushReplacementNamed(SettingsScreen.routeName);
               }
             },
           ),

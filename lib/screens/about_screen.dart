@@ -4,21 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:news/models/screens.dart';
 import 'package:news/widgets/main_drawer.dart';
 
+import '../models/utils.dart';
+
 class AboutScreen extends StatelessWidget {
   static const routeName = '/about';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(32, 32, 32, 1),
+      backgroundColor: Utils.mainColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 24, 24, 1),
+        backgroundColor: Utils.appBarColor,
         title: const Text('About'),
       ),
       drawer: MainDrawer(Screens.About),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(8.0),
-          child: const Text(
+          child: Text(
             """
 The BBC is the world’s leading public service broadcaster
 We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the UK and around the world.
@@ -35,7 +37,7 @@ Our commercial operations including BBC Studios, the BBC’s award-winning produ
 
 The BBC’s Board ensures that we deliver our mission and public purposes which are set out in the Charter. The Executive Committee is responsible for day-to-day management. We are regulated by Ofcom.
       """,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Utils.textColor),
           ),
         ),
       ),

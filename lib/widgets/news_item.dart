@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/models/utils.dart';
 import 'package:news/screens/news_screen.dart';
 
 class NewsItem extends StatelessWidget {
@@ -9,7 +10,7 @@ class NewsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
-        color: const Color.fromRGBO(32, 32, 32, 1),
+        color: Utils.mainColor,
         clipBehavior: Clip.antiAlias,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
@@ -57,10 +58,10 @@ class NewsItem extends StatelessWidget {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(20, 15, 20, 5),
-              child: const Text(
+              child: Text(
                 'Jurnalistlər arasında Zəfər Kuboku keçiriləcək',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Utils.textColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -76,15 +77,13 @@ class NewsItem extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.remove_red_eye,
-                        color: Colors.white,
+                        color: Utils.iconColor,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
+                      const SizedBox(width: 5),
                       Text(
                         '36',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Utils.textColor,
                         ),
                       ),
                     ],
@@ -93,15 +92,13 @@ class NewsItem extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.date_range,
-                        color: Colors.white,
+                        color: Utils.iconColor,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
+                      const SizedBox(width: 5),
                       Text(
                         '2022.04.13',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Utils.textColor,
                         ),
                       ),
                     ],
@@ -110,15 +107,13 @@ class NewsItem extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.source,
-                        color: Colors.white,
+                        color: Utils.iconColor,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
+                      const SizedBox(width: 5),
                       Text(
                         'oxu.az',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Utils.textColor,
                         ),
                       ),
                     ],
