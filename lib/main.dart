@@ -1,5 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers, use_key_in_widget_constructors
 import 'package:flutter/material.dart';
+import 'package:news/models/utils.dart';
 import 'package:news/screens/about_screen.dart';
 import 'package:news/screens/categories_screen.dart';
 import 'package:news/screens/contact_screen.dart';
@@ -15,6 +16,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Utils.getSystemMode();
+    Utils.getAppBarColor();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

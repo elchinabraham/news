@@ -119,7 +119,7 @@ class ContactScreen extends StatelessWidget {
                 height: 45,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Utils.buttonColor,
+                    primary: Utils.appBarColor,
                   ),
                   onPressed: () {},
                   child: const Text(
