@@ -7,70 +7,75 @@ class NewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Utils.mainColor,
-      appBar: AppBar(
-        backgroundColor: Utils.appBarColor,
-        title: Text('data'),
-        actions: <Widget>[
-          PopupMenuButton<int>(
-            color: Utils.mainColor,
-            onSelected: (x) {},
-            itemBuilder: (context) => [
-              PopupMenuItem<int>(
-                value: 0,
-                child: Text(
-                  'Copy Text',
-                  style: TextStyle(
-                    color: Utils.textColor,
-                  ),
-                ),
-                onTap: () {},
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Utils.appBarColor,
+            pinned: true,
+            expandedHeight: 270.0,
+            flexibleSpace: FlexibleSpaceBar(
+              title: const Text('Elchin Abraham'),
+              background: Image.network(
+                'https://cdn.oxu.az/uploads/W1siZiIsIjIwMjIvMDQvMzAvMTEvMTUvMTcvMzI1N2Q1ZjktNjE5Mi00OTQ4LWFkY2UtNDk2MjFjYmExNDk0L0ZvdG9KZXQgKDkzKS5qcGciXSxbInAiLCJlbmNvZGUiLCJqcGciLCItcXVhbGl0eSA4MCJdLFsicCIsInRodW1iIiwiNjIweDQxMyMiXV0?sha=504f686877b0ff3d',
+                fit: BoxFit.cover,
               ),
-              PopupMenuItem<int>(
-                value: 1,
-                child: Text(
-                  'Add Favorite',
-                  style: TextStyle(
-                    color: Utils.textColor,
+            ),
+            actions: [
+              PopupMenuButton<int>(
+                color: Utils.mainColor,
+                onSelected: (x) {},
+                itemBuilder: (context) => [
+                  PopupMenuItem<int>(
+                    value: 0,
+                    child: Text(
+                      'Copy Text',
+                      style: TextStyle(
+                        color: Utils.textColor,
+                      ),
+                    ),
+                    onTap: () {},
                   ),
-                ),
-                onTap: () {},
+                  PopupMenuItem<int>(
+                    value: 1,
+                    child: Text(
+                      'Add Favorite',
+                      style: TextStyle(
+                        color: Utils.textColor,
+                      ),
+                    ),
+                    onTap: () {},
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              height: 270,
-              child: Image.network(
-                'https://cdn.oxu.az/uploads/W1siZiIsIjIwMjIvMDQvMTMvMTIvMjUvMTMvNWYyNjExZGUtOTRlMS00MDQyLWI0YzYtZGVjYmFiYTJmMTQzL1doYXRzQXBwIEltYWdlIDIwMjItMDQtMTMgYXQgMTEuMDguMDIgKDEpLmpwZWciXSxbInAiLCJlbmNvZGUiLCJqcGciLCItcXVhbGl0eSA4MCJdLFsicCIsInRodW1iIiwiNjIweDQxMyMiXV0?sha=4b201032df2d17ea',
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            ListTile(
-              title: Text(
-                """
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Column(
+                  children: <Widget>[
+                    ListTile(
+                      title: Text(
+                        """
 
 Pakistan Azərbaycan əlaqələrinin tarixi kökləri
                 """,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Utils.textColor,
-                ),
-              ),
-              subtitle: Text(
-                """Bu gün bir pakistanlı satıcı ilə söhbətim zamanı bu sualı ünvanladım. Pakistanlılar bizi niyə sevir? Aldığım cavab mənə çoxdan oxuduğum bir məqaləni xatırlatdı. Pakistan xalqı ilə könül bağlarımızın Hacı Zeynalabdin Tağıyevlə bağlı olduğunu bilirdim amma ilk könül bağlarının yaranma tarixini açığı unutmuşdum. Əslində bu sualın bir çox cavabı var.""",
-                style: TextStyle(
-                    color: Utils.textColor, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
-              child: Text(
-                """       Mən Pakistanlıların bizi ilk sevdiyi taixdən danışacağam. Babur Şahın dönəmindən. Qazi Zahirəddin Məhəmməd Babur Şah (14 fevral 1483 - 26 dekabr 1530) — Böyük Moğol İmperiyasının qurucusu və ilk hökmdarıdır. Baburun Çağatay türkcəsində yazdığı və həyatından xronoloji olaraq bəhs etdiyi Baburnamə əsəri Türk ədəbiyyatı tarixində önəmli yerə sahibdir. Xətti Babur deyilən yazı sistemini təkmilləşdirən Babur eyni zamanda Çağatay türkcəsində yazılmış ədəbiyyatın Əlişir Nəvaidən sonra ən böyük şairi hesab olunur.
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Utils.textColor,
+                        ),
+                      ),
+                      subtitle: Text(
+                        """Bu gün bir pakistanlı satıcı ilə söhbətim zamanı bu sualı ünvanladım. Pakistanlılar bizi niyə sevir? Aldığım cavab mənə çoxdan oxuduğum bir məqaləni xatırlatdı. Pakistan xalqı ilə könül bağlarımızın Hacı Zeynalabdin Tağıyevlə bağlı olduğunu bilirdim amma ilk könül bağlarının yaranma tarixini açığı unutmuşdum. Əslində bu sualın bir çox cavabı var.""",
+                        style: TextStyle(
+                            color: Utils.textColor,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+                      child: Text(
+                        """       Mən Pakistanlıların bizi ilk sevdiyi taixdən danışacağam. Babur Şahın dönəmindən. Qazi Zahirəddin Məhəmməd Babur Şah (14 fevral 1483 - 26 dekabr 1530) — Böyük Moğol İmperiyasının qurucusu və ilk hökmdarıdır. Baburun Çağatay türkcəsində yazdığı və həyatından xronoloji olaraq bəhs etdiyi Baburnamə əsəri Türk ədəbiyyatı tarixində önəmli yerə sahibdir. Xətti Babur deyilən yazı sistemini təkmilləşdirən Babur eyni zamanda Çağatay türkcəsində yazılmış ədəbiyyatın Əlişir Nəvaidən sonra ən böyük şairi hesab olunur.
       
       Babur ata tərəfdən Teymurilər sülaləsindən, ana tərəfdən isə Çingizlilər sülaləsindəndir. Baburun atası Əmir Teymurun nəvəsi olan Ömər Şeyx Mirzə Barlas idi. Baburun anası isə Çingizlilər nəslindən olan Yunus xanın qızı Qutluq Nigar xanım idi.
       
@@ -102,83 +107,87 @@ Pakistan Azərbaycan əlaqələrinin tarixi kökləri
       
       Son olaraq bir məlumatı da qeyd etmək lazımdır ki, Pakistan İslam Respublikası Azərbaycan torpaqlarını işğal etdiyi üçün Ermənistanı bir dövlət kimi tanımır və müharibə zamanı ehtiyac yaranarsa Pakistan ordusunun köməyə gəlməyə hazır olduğunu bildirirlər..
                 """,
-                style: TextStyle(
-                  color: Utils.textColor,
-                ),
-              ),
-            ),
-            Container(
-              height: 100,
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Icon(
-                        Icons.calendar_month,
-                        color: Utils.iconColor,
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        'Datetime:',
-                        style: TextStyle(color: Utils.textColor),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Flexible(
-                        fit: FlexFit.tight,
-                        child: Text(
-                          '2022/04/15 12:30',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Utils.textColor),
-                          textAlign: TextAlign.right,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Icon(
-                        Icons.source,
-                        color: Utils.iconColor,
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        'Author:',
                         style: TextStyle(
                           color: Utils.textColor,
                         ),
                       ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Flexible(
-                        fit: FlexFit.tight,
-                        child: Text(
-                          'Elchin Ibrahimli',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Utils.textColor,
+                    ),
+                    Container(
+                      height: 120,
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Icon(
+                                Icons.calendar_month,
+                                color: Utils.iconColor,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Datetime:',
+                                style: TextStyle(color: Utils.textColor),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Flexible(
+                                fit: FlexFit.tight,
+                                child: Text(
+                                  '2022/04/15 12:30',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Utils.textColor),
+                                  textAlign: TextAlign.right,
+                                ),
+                              ),
+                            ],
                           ),
-                          textAlign: TextAlign.right,
-                        ),
+                          const SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Icon(
+                                Icons.source,
+                                color: Utils.iconColor,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Author:',
+                                style: TextStyle(
+                                  color: Utils.textColor,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Flexible(
+                                fit: FlexFit.tight,
+                                child: Text(
+                                  'Elchin Ibrahimli',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Utils.textColor,
+                                  ),
+                                  textAlign: TextAlign.right,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

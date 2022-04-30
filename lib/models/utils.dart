@@ -10,6 +10,7 @@ class Utils {
   static Color iconColor = Colors.white;
   static Color buttonColor = Colors.grey;
   static Mode appMode = Mode.Dark;
+  static CustomColor selectedColor = CustomColor.Red;
 
   static Future<void> getSystemMode() async {
     final prefs = await SharedPreferences.getInstance();
@@ -29,15 +30,23 @@ class Utils {
       switch (c) {
         case "b":
           appBarColor = Colors.blue;
+          selectedColor = CustomColor.Blue;
           break;
         case "r":
           appBarColor = Colors.red;
+          selectedColor = CustomColor.Red;
           break;
         case "p":
           appBarColor = Colors.purple;
+          selectedColor = CustomColor.Purple;
           break;
         case "o":
           appBarColor = Colors.orange;
+          selectedColor = CustomColor.Orange;
+          break;
+        case "d":
+          appBarColor = const Color.fromRGBO(24, 24, 24, 1);
+          selectedColor = CustomColor.Default;
           break;
       }
     } else {
@@ -53,15 +62,23 @@ class Utils {
     switch (customColor) {
       case CustomColor.Blue:
         appBarColor = Colors.blue;
+        selectedColor = CustomColor.Blue;
         break;
       case CustomColor.Red:
         appBarColor = Colors.red;
+        selectedColor = CustomColor.Red;
         break;
       case CustomColor.Purple:
         appBarColor = Colors.purple;
+        selectedColor = CustomColor.Purple;
         break;
       case CustomColor.Orange:
         appBarColor = Colors.orange;
+        selectedColor = CustomColor.Orange;
+        break;
+      case CustomColor.Default:
+        appBarColor = const Color.fromRGBO(24, 24, 24, 1);
+        selectedColor = CustomColor.Default;
         break;
     }
   }
@@ -82,6 +99,8 @@ class Utils {
       case CustomColor.Orange:
         _color = "o";
         break;
+      case CustomColor.Default:
+        _color = "d";
     }
     prefs.setString('appBarColor', _color);
   }
@@ -93,6 +112,7 @@ class Utils {
     iconColor = const Color.fromRGBO(100, 100, 100, 1);
     appMode = Mode.Light;
     buttonColor = appBarColor;
+    selectedColor = CustomColor.Red;
   }
 
   static Future<void> convertDarkMode() async {
@@ -102,6 +122,7 @@ class Utils {
     iconColor = Colors.white;
     appMode = Mode.Dark;
     buttonColor = Colors.grey;
+    selectedColor = CustomColor.Default;
   }
 
   static Future<void> saveSystemMode() async {

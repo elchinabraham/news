@@ -16,29 +16,32 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   bool darkMode = Utils.appMode == Mode.Dark;
-  CustomColor? selectedColor = CustomColor.Red;
-  void _changeAppBarColor(CustomColor customColor) {
-    if (!darkMode) {
-      Utils.convertLightMode();
-    } else {
-      Utils.convertDarkMode();
-    }
+  CustomColor? selectedColor = Utils.selectedColor;
+  // void _changeAppBarColor(CustomColor customColor) {
+  //   if (!darkMode) {
+  //     Utils.convertLightMode();
+  //   } else {
+  //     Utils.convertDarkMode();
+  //   }
 
-    switch (customColor) {
-      case CustomColor.Blue:
-        Utils.appBarColor = Colors.blue;
-        break;
-      case CustomColor.Red:
-        Utils.appBarColor = Colors.red;
-        break;
-      case CustomColor.Purple:
-        Utils.appBarColor = Colors.purple;
-        break;
-      case CustomColor.Orange:
-        Utils.appBarColor = Colors.orange;
-        break;
-    }
-  }
+  //   switch (customColor) {
+  //     case CustomColor.Blue:
+  //       Utils.appBarColor = Colors.blue;
+  //       break;
+  //     case CustomColor.Red:
+  //       Utils.appBarColor = Colors.red;
+  //       break;
+  //     case CustomColor.Purple:
+  //       Utils.appBarColor = Colors.purple;
+  //       break;
+  //     case CustomColor.Orange:
+  //       Utils.appBarColor = Colors.orange;
+  //       break;
+  //     case CustomColor.Default:
+  //       const Color.fromRGBO(24, 24, 24, 1);
+  //       break;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +65,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const SizedBox(height: 10),
           Column(
             children: <Widget>[
+              ListTile(
+                title: Text(
+                  'Dark',
+                  style: TextStyle(
+                    color: Utils.textColor,
+                  ),
+                ),
+                leading: Radio<CustomColor>(
+                  fillColor: MaterialStateColor.resolveWith(
+                      (states) => const Color.fromRGBO(24, 24, 24, 1)),
+                  value: CustomColor.Default,
+                  groupValue: selectedColor,
+                  onChanged: (CustomColor? value) {
+                    setState(() {
+                      selectedColor = value;
+                      Utils.changeAppBarColor(selectedColor as CustomColor);
+                    });
+                  },
+                ),
+              ),
               ListTile(
                 title: Text(
                   'Red',
@@ -163,8 +186,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         darkMode = e;
                         if (darkMode) {
                           Utils.convertDarkMode();
+                          selectedColor = CustomColor.Default;
                         } else {
                           Utils.convertLightMode();
+                          selectedColor = CustomColor.Red;
                         }
                       });
                     },
